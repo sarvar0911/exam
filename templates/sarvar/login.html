@@ -1,0 +1,15 @@
+{% extends 'sarvar/base.html' %}
+{% block title %} Login Page{% endblock %}
+
+{% block body %}
+    <h1 style="text-align: center">User Login Form</h1>
+
+    <h3 style="text-align: center">You have an <a href="{% url 'blog:register-page' %}">account ?</a></h3>
+    <form method="post" style="text-align: center">
+        {% csrf_token %}
+        {{ form.as_div }}
+
+    <button type="submit">Login</button>
+    </form>
+
+    {% endblock %}
